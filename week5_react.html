@@ -11,7 +11,7 @@
 <link rel="stylesheet" href="lib/css/zenburn.css">
 <link rel="stylesheet" href="css/custom.css">
 
-<!-- Printing and PDF exports --> 
+<!-- Printing and PDF exports -->
 <script>
 			var link = document.createElement( 'link' );
 			link.rel = 'stylesheet';
@@ -82,7 +82,7 @@
     <section data-menu-title="LAST WORKSHOP OVERVIEW" data-background-transition="convex" >
       <h4>Common mistakes</h4>
       <p class="fragment bullet">Bad tutorial not updating packages</p>
-      <p class="fragment bullet">Ddependencies</p>
+      <p class="fragment bullet">Dependencies</p>
       <p class="fragment bullet">Old expo version</p>
       <p class="fragment bullet">Basic issues can be resolved by...</p>
     </section>
@@ -157,7 +157,7 @@
 
     </section>
     <section >
-      <h4>React Native API</h4> 
+      <h4>React Native API</h4>
 		<p class="small">Over 30 UI Primitives</p>
 		<p>View <br>
 Text <br>
@@ -168,8 +168,8 @@ Switch<br>
 Navigator</p>
     </section>
     <section >
-      <h4>React Native API</h4> 
-		
+      <h4>React Native API</h4>
+
 		<p class="small">Mapping to Web UI primitives</p>
 		<p>View == div <br>
 Text == span / p / h* <br>
@@ -184,12 +184,12 @@ TextInput == input </p>
     <code data-trim  style="font-size: 50%; line-height: normal">
 
 // check if any node modules need installing for Cli
-import { View Text ScrollView Image TextInput Switch } from ‘react-native’; 
+import { View Text ScrollView Image TextInput Switch } from ‘react-native’;
 
 </code></pre>
     </section>
     <section >
-      <h4>React Native API</h4> 
+      <h4>React Native API</h4>
 		<p class="small">Device APIs</p>
 		<p>CameraRoll <br>
 Keyboard<br> NetInfo <br>
@@ -230,19 +230,19 @@ PanResponder</p>
       <p class="small">JS Objects or inline styles Styling </p>
       <pre>
     <code data-trim  style="font-size: 50%; line-height: normal">
-const styles = 
-{ 
-	container: { 
-		margin: 20, backgroundColor: ‘red’ 
-		} 
+const styles =
+{
+	container: {
+		margin: 20, backgroundColor: ‘red’
+		}
 }
- 
+
  &lt;View style={styles.container} /&gt;
-	
+
 	</code></pre>
 	  </section>
-		
-		
+
+
     <section data-background="#3f3f3f">
       <h4>React Native vs Web Styling </h4>
       <p class="small">Stylesheet </p>
@@ -251,10 +251,10 @@ const styles =
 import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create(
-	{ container: { 
-		margin: 20, backgroundColor: ‘red’ } 
+	{ container: {
+		margin: 20, backgroundColor: ‘red’ }
 	})
-	
+
 &lt;View style={styles.container} /&gt;
 	</code></pre>
     </section>
@@ -302,7 +302,7 @@ const styles = StyleSheet.create(
     </section>
     <section >
 		<h4>Components </h4>
-   
+
       <p >Return a node</p>
       <p >Represent a piece of UI</p>
       <p >Can be created in one of two ways:</p>
@@ -310,21 +310,21 @@ const styles = StyleSheet.create(
       <p class="fragment">2. Stateful (class)</p>
     </section>
     <section >
-		<h4>Components</h4> 
+		<h4>Components</h4>
 		<p class="small"></p>Stateless Components </p>
       <p class="fragment">Don’t need state or lifecycle methods</p>
       <p class="fragment">Any update in the props will trigger a rerender</p>
 	  <P class="small">A stateless component has no state(obvious, isn’t it?), it means that you can’t reach `this.state` inside it. It also has no lifecycle so you can’t use componentDidMount and other hooks.</P>
     </section>
     <section data-background="#3f3f3f">
-      <h4>Components</h4> 
+      <h4>Components</h4>
 		<p class="small"></p>Stateless Components </p>
       <pre>
     <code data-trim  style="font-size: 50%; line-height: normal">
 const MyComponent = () => (
     <Text>Hello World</Text>
     )
-    
+
 &lt;MyComponent /&gt;
 	// JSX
 	</code></pre>
@@ -333,17 +333,17 @@ const MyComponent = () => (
       <h4>Components Class / Stateful Components </h4>
       <pre>
     <code data-trim  style="font-size: 50%; line-height: normal">
-class MyComponent extends React.Component 
-{ 
-	render() { 
+class MyComponent extends React.Component
+{
+	render() {
 		return (
     	<Text>Hello World</Text>
-    ) } 
+    ) }
 }
 </pre>
       </code> </section>
     <section >
-      <h4>Components</h4> 
+      <h4>Components</h4>
 		<p class="small"></p>3 types of component lifecycles</p>
 	<p>Creation / Mounting <br>
 Updating <br>
@@ -359,7 +359,7 @@ componentDidMount<br>
 	</section>
     <section >
     <h4>Components Updating</h4>
-     
+
 		<p>static getDerivedStateFromProps(nextProps, prevState) </p>
    <p> shouldComponentUpdate(nextProps, nextState) </p>
    <p> render </p>
@@ -367,7 +367,7 @@ componentDidMount<br>
    <p> componentDidUpdate</p>
 
     </section>
-	  
+
     <section >
       <h4>Components</h4>
 		<p class="small">Unmounting </p>
@@ -375,26 +375,26 @@ componentDidMount<br>
     <section data-background="#3f3f3f">
       <h4>Components Lifecycle </h4>
       <pre>
-    <code data-trim  style="font-size: 50%; line-height: normal"> 
-class MyComponent extends React.Component 
-{ 
-  constructor() 
-  	{ // 1 
-    super() this.name = 'My Cool Component’ 
+    <code data-trim  style="font-size: 50%; line-height: normal">
+class MyComponent extends React.Component
+{
+  constructor()
+  	{ // 1
+    super() this.name = 'My Cool Component’
 	}
-     
-	static getDerivedStateFromProps(nextProps, prevState) {} // 2 
-	
-	componentDidMount() {} // 4 
-		
-	render() { // 3 
+
+	static getDerivedStateFromProps(nextProps, prevState) {} // 2
+
+	componentDidMount() {} // 4
+
+	render() { // 3
 		return (
     		<Text>Hello World</Text>
-    		) } 
+    		) }
 }
 </code></pre>
     </section>
-	
+
 	<section data-menu-title="jquery mobile 3" data-background="assets/2020/week5/react2.png" data-background-size="contain" data-background-color="#fff">
 </section>
 	<section data-background="#3f3f3f">
@@ -412,36 +412,36 @@ class ChildComponent extends React.Component {
     console.log(props.color)
   }
 }
-	
+
 	</code></pre>
 	</section>
-	
-	
+
+
     <section data-background="#3f3f3f">
       <h4>Data State </h4>
       <pre>
     <code data-trim  style="font-size: 50%; line-height: normal">
-class MyComponent extends React.Component 
-{ 
- state = { name: 'Wayne’ } changeName = () => { this.setState({ name: 'Khaled' }) } 
-  render() { 
+class MyComponent extends React.Component
+{
+ state = { name: 'Wayne’ } changeName = () => { this.setState({ name: 'Khaled' }) }
+  render() {
 	return (
 	  <Text>Hello {this.state.name}</Text>
 	) }
 }
-	
+
 	</code></pre>
     </section>
     <section data-background="#3f3f3f">
       <h4> Data Props </h4>
       <pre>
     <code data-trim  style="font-size: 50%; line-height: normal">
-class MyComponent extends React.Component 
-{ 
-  render() { 
+class MyComponent extends React.Component
+{
+  render() {
 	  return (
     	 <Text>Hello {this.props.name}</Text>
-    	) } 
+    	) }
 }
 
 	&lt;MyComponent name=&quot;Wayne&quot; /&gt;
@@ -449,7 +449,7 @@ class MyComponent extends React.Component
     </section>
 		<section data-menu-title="jquery mobile 3" data-background="assets/2020/week5/d.jpg" data-background-size="contain" data-background-color="#fff">
 </section>
-	
+
 	 <section data-background="#3f3f3f">
       <h4>Home Page </h4>
       <pre>
@@ -622,16 +622,16 @@ const FooterText = styled.Text`
     </section>
   </div>
 </div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> 
-<script src="lib/js/head.min.js"></script> 
-<script src="js/reveal.js"></script> 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> 
-<script src="https://code.highcharts.com/highcharts.js"></script> 
-<script src="https://code.highcharts.com/highcharts-more.js"></script> 
-<script src="https://code.highcharts.com/modules/solid-gauge.js"></script> 
-<script src="js/themes/mypbtheme.js"></script> 
-<script src="js/jquery.animateNumber.min.js"></script> 
-<script src="js/main.js"></script> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/highcharts-more.js"></script>
+<script src="https://code.highcharts.com/modules/solid-gauge.js"></script>
+<script src="js/themes/mypbtheme.js"></script>
+<script src="js/jquery.animateNumber.min.js"></script>
+<script src="js/main.js"></script>
 <script>
 	var link = document.createElement( 'link' );
 	link.rel = 'stylesheet';
