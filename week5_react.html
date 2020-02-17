@@ -1,0 +1,643 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Week 5: Intro to React and styling</title>
+<link rel="stylesheet" href="css/reveal.css">
+<link rel="stylesheet" href="css/theme/night.css">
+
+<!-- Theme used for syntax highlighting of code -->
+<link rel="stylesheet" href="lib/css/zenburn.css">
+<link rel="stylesheet" href="css/custom.css">
+
+<!-- Printing and PDF exports --> 
+<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+<style>
+.reveal h4 {
+    color: #f28e19
+}
+</style>
+</head>
+<body>
+<div class="reveal">
+  <div class="slides">
+    <section data-background-transition="convex" data-background="#333333">
+      <h2 >Hello</h2>
+      <p style="color:#F8AA00">Cross Platform Development (CMP3035M)</p>
+    </section>
+    <section data-background-transition="convex" data-background-video="assets/week1assets/rainingcode.mp4" data-background-video-loop="loop">
+      <h4 >Wayne Christian</h4>
+      <p style="color:#F8AA00">Designer, Developer, Director & Senior Lecturer</p>
+    </section>
+    <section data-menu-title="team" data-background-transition="convex" >
+      <h4>Module Goals</h4>
+      <p class="fragment bullet"><strong>Design</strong> => Focus on user experience</p>
+      <p class="fragment bullet"><strong>Develop</strong> => Using cross-platform tools</p>
+      <p class="fragment bullet"><strong>Reflect</strong> => On the whole process </p>
+    </section>
+    <section class="" data-background="assets/week1assets/brain.jpg" style="">
+      <h4 style=" text-shadow: black 1px 1px;">It requires logical and creative thinking</h4>
+    </section>
+    <section data-background-transition="convex" data-background-video="https://assets.awwwards.com/awards/external/2017/02/58ac00a531a84.mp4" data-background-video-loop="loop"> </section>
+    <section data-background-transition="convex" >
+      <h4>Where you should be!</h4>
+      <p class="fragment bullet">Idea/ Concept finalised (this is always ongoing)</p>
+      <p class="fragment bullet">Initial UX designs completed (this is always ongoing)</p>
+      <p class="fragment bullet">Prototypes (on balsamiq) finished and evaluated</p>
+      <p class="fragment bullet">Features anticipated/loosely researched (this is always ongoing) </p>
+    </section>
+    <section data-background-transition="convex" >
+      <h4>*Next 5 weeks (programming features)</h4>
+      <p class="fragment bullet" style="text-decoration: line-through">Week 5: Intro to React (styling)</p>
+      <p class="fragment bullet"><strong>Week 6: Image capture, gestures js, canvas and saving images</strong></p>
+      <p class="fragment bullet">Week 7: barcode scanner, ajax, api calls</p>
+      <p class="fragment bullet">Week 8: Geo location and local storage and google maps,</p>
+      <p class="fragment bullet">Week 9: push notifications, using apis</p>
+      <p class="fragment bullet">*Subject to change (may do some AR depending how far we get)</p>
+    </section>
+    <section data-menu-title="LAST WORKSHOP OVERVIEW" data-background-transition="convex" >
+      <h1 style="color: red">Warning</h1>
+      <p class="">Less pictures, more code today!</p>
+    </section>
+    <section data-menu-title="jquery mobile 3" data-background="assets/week5assets/jqmlecture3.png" data-background-size="950px" ></section>
+    <section data-menu-title="LAST WORKSHOP OVERVIEW" data-background-transition="convex" >
+      <h1 style="">Recap</h1>
+      <p class="">Looking at last weeks workshop</p>
+    </section>
+    <section data-menu-title="LAST WORKSHOP OVERVIEW" data-background-transition="convex" >
+      <h4>We looked at</h4>
+      <p class="fragment bullet">Expo and Snack </p>
+      <p class="fragment bullet">Creating an initial site structure.</p>
+      <p class="fragment bullet">Viewing on your device</p>
+      <p class="fragment bullet">Navigator Stack changing pages)</p>
+      <p class="fragment bullet">Loosely looked at structure</p>
+    </section>
+    <section data-menu-title="LAST WORKSHOP OVERVIEW" data-background-transition="convex" >
+      <h4>Common mistakes</h4>
+      <p class="fragment bullet">Bad tutorial not updating packages</p>
+      <p class="fragment bullet">Ddependencies</p>
+      <p class="fragment bullet">Old expo version</p>
+      <p class="fragment bullet">Basic issues can be resolved by...</p>
+    </section>
+    <section>
+      <h4>Me: Have you checked the console..</h4>
+      <h4 class="fragment" style="color: darkcyan">Student: The what?</h4>
+    </section>
+    <section data-background-transition="convex" data-background-video="assets/kick.mp4"> </section>
+    <section data-menu-title="" data-background-transition="convex" >
+      <h4>Today we will discuss:</h4>
+      <p class="fragment bullet">React Overview</p>
+      <p class="fragment bullet">Props vs state</p>
+      <p class="fragment bullet">Styling workshop</p>
+    </section>
+    <section >
+      <h4>Prerequisites </h4>
+      <p class="fragment">JavaScript, preferably ES6 / ES2015</p>
+      <p class="fragment">Knowledge of how to use the command line</p>
+      <p class="fragment">Basic understanding of npm & how it works</p>
+    </section>
+   <section >
+      <h4>Environment </h4>
+      <p class="fragment">Node – version >= 12</p>
+      <p class="fragment">Watchman (if using React Native CLI)</p>
+      <p class="fragment">Xcode (to run iOS simulator)</p>
+      <p class="fragment">Genymotion or Android Studio (to run on Android Emulator)</p>
+      <p class="fragment">Expo Cli, React Cli</p>
+    </section>
+    <section >
+      <h4>What is React Native?</h4>
+      <p class="fragment">Built using React</p>
+      <p class="fragment">Build cross platform applications using JavaScript</p>
+      <p class="fragment">Target not only iOS & Android, but also Apple TV, VR, AR, Windows, & Desktop</p>
+      <p class="fragment">Released March 2015</p>
+      <p class="fragment">Rapidly gaining in popularity & adoption</p>
+      <p class="fragment">Learn once write anywhere</p>
+      <p class="fragment">Real world projects typically see 80% – 95% code reuse</p>
+    </section>
+    <section >
+      <h4>Who’s using React Native </h4>
+		<div class="half">  <p class="small">Facebook</p>
+      <p class="small">Instagram</p>
+      <p class="small">Walmart</p>
+      <p class="small">Airbnb</p>
+      <p class="small">Skype</p>
+      <p class="small">Baidu</p></div>
+    <div class="half">
+      <p class="small">Tesla</p>
+      <p class="small">Adidas</p>
+      <p class="small">Discord</p>
+      <p class="small">Wix</p>
+      <p class="small">Bloomberg</p>
+      <p class="small">JD.com</p>
+		</div>
+    </section>
+    <section >
+      <h4>Why React Native</h4>
+      <p class="fragment">Faster speed of development</p>
+      <p class="fragment">Lower cost of development</p>
+      <p class="fragment">Code reuse</p>
+      <p class="fragment">Easier to find developers</p>
+      <p class="fragment">Ship across multiple platforms</p>
+      <p class="fragment">Possible to ship over the air updates bypassing App Store / Play Store</p>
+    </section>
+    <section >
+      <h4>How does React Native Work?</h4>
+      <p class="fragment">JavaScript is bundled & minified using Babel (built in)</p>
+      <p class="fragment">Separate threads for UI, layout, and JavaScript</p>
+      <p class="fragment">Threads communicate asynchronously through the native bridge</p>
+    </section>
+    <section data-background="assets/2020/week5/react1.png" data-background-size="cover" >
+
+    </section>
+    <section >
+      <h4>React Native API</h4> 
+		<p class="small">Over 30 UI Primitives</p>
+		<p>View <br>
+Text <br>
+ScrollView <br>
+Image <br>
+TextInput <br>
+Switch<br>
+Navigator</p>
+    </section>
+    <section >
+      <h4>React Native API</h4> 
+		
+		<p class="small">Mapping to Web UI primitives</p>
+		<p>View == div <br>
+Text == span / p / h* <br>
+ScrollView == div + styling <br>
+Image == img <br>
+TextInput == input </p>
+    </section>
+    <section data-background="#3f3f3f">
+      <h4>React Native API </h4>
+		  <p class="small">Primitives not globally in scope, must be imported</p>
+		 <pre>
+    <code data-trim  style="font-size: 50%; line-height: normal">
+
+// check if any node modules need installing for Cli
+import { View Text ScrollView Image TextInput Switch } from ‘react-native’; 
+
+</code></pre>
+    </section>
+    <section >
+      <h4>React Native API</h4> 
+		<p class="small">Device APIs</p>
+		<p>CameraRoll <br>
+Keyboard<br> NetInfo <br>
+Vibration <br>
+PanResponder</p>
+		<p class="small"><a href="https://docs.expo.io/versions/latest/">https://docs.expo.io/versions/latest/</a></p>
+    </section>
+    <section >
+      <h4>React Native vs Web </h4>
+      <p class="fragment">Different primitives</p>
+      <p class="fragment">Styling</p>
+      <p class="fragment">Most browser APIs do not exist</p>
+      <p class="fragment">Some browser APIs polyfilled (geolocation, fetch, timers, console)</p>
+      <p class="fragment">Navigation</p>
+      <p class="fragment">Mobile UI / UX</p>
+      <p class="fragment">Native IDEs / configuration</p>
+      <p class="fragment">Deployment</p>
+    </section>
+    <section >
+      <h4>React Native vs Web </h4>
+      <p class="fragment">Unlike web, not every component has every interaction</p>
+      <p class="fragment">Handful of “touchable” components</p>
+      <p class="fragment">Button, TouchableHighlight, TouchableOpacity, TouchableWithoutFeedback</p>
+      <p class="fragment">Create custom touchable components with PanResponder API Event handling ( gesture responder system)</p>
+    </section>
+    <section >
+      <h4>React Native vs Web </h4>
+		<p class="small">Styling</p>
+      <p class="fragment">Based on CSS styles - we will look at "styled componants" today</p>
+      <p class="fragment">Layout is done with FlexBox see <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">link</a></p>
+      <p class="fragment">Style prop can be one or an array of styles</p>
+      <p class="fragment">Use StyleSheet API for perf optimization</p>
+      <p class="fragment">Makes it possible to refer to styles by ID instead of creating a new style object every time.</p>
+      <p class="fragment">Allows to send the style only once through the bridge. All subsequent uses are going to refer an id (not implemented yet). </p>
+    </section>
+    <section data-background="#3f3f3f">
+      <h4>React Native vs Web </h4>
+      <p class="small">JS Objects or inline styles Styling </p>
+      <pre>
+    <code data-trim  style="font-size: 50%; line-height: normal">
+const styles = 
+{ 
+	container: { 
+		margin: 20, backgroundColor: ‘red’ 
+		} 
+}
+ 
+ &lt;View style={styles.container} /&gt;
+	
+	</code></pre>
+	  </section>
+		
+		
+    <section data-background="#3f3f3f">
+      <h4>React Native vs Web Styling </h4>
+      <p class="small">Stylesheet </p>
+      <pre>
+    <code data-trim  style="font-size: 50%; line-height: normal">
+import { StyleSheet } from 'react-native';
+
+const styles = StyleSheet.create(
+	{ container: { 
+		margin: 20, backgroundColor: ‘red’ } 
+	})
+	
+&lt;View style={styles.container} /&gt;
+	</code></pre>
+    </section>
+    <section >
+      <h4>Creating a new React Native Project </h4>
+		<p class="small">2 Main Options </p>
+		<p class="bullet">React Native CLI </p>
+		<p class="bullet">Expo CLI </p>
+	  </section>
+    <section >
+      <h4>Creating a new React Native Project </h4>
+      <p class="small">Expo App CLI</p>
+      <p class="fragment">Builds without native projects & code</p>
+      <p class="fragment">Native code not configurable</p>
+      <p class="fragment">Will run without most SDKs & IDEs installed</p>
+      <p class="fragment">Great for newer developers</p>
+      <p class="fragment">Includes features like Camera, Location, Push Notifications, Social Authentication, Accelerometer, File System, & Image Picker configured out of the box</p>
+    </section>
+    <section >
+      <h4>Expo Cli</h4>
+      <code>npm install -g expo-cli</code></section>
+    <section >
+      <h4> Creating a new React Native Project React Native CLI </h4>
+      <p class="fragment">Builds with native projects & code</p>
+      <p class="fragment">Native code configurable</p>
+      <p class="fragment">Needs proper environment setup in order to run</p>
+      <p class="fragment">Does not include some important APIs without additional configuration</p>
+    </section>
+    <section >
+      <h4>Creating a new React Native Project</h4>
+		<p class="small">Expo Cli</p>
+      <p class="">1. In command line, Navigate to where you want to save your project. For example, If its on the Desktop then use <strong>cd desktop</strong> </p>
+<p class="">2.	Run <strong>expo init</strong> to create a project. The blank project template option will be selected by default, you can change the template with the up and down arrow keys, but let's just use the blank template for now.</p>
+ </section>
+       <section data-background="assets/2020/reactintro5.jpg" data-background-size="contain" data-background-color="#ffffff">
+      <h4>Main Ideas Behind React Components, Rendering & Lifecycles<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</h4>
+    </section>
+    <section >
+		<h4>Components </h4>
+   
+      <p >Return a node</p>
+      <p >Represent a piece of UI</p>
+      <p >Can be created in one of two ways:</p>
+	<p class="fragment">1.Stateless (function)</p>
+      <p class="fragment">2. Stateful (class)</p>
+    </section>
+    <section >
+		<h4>Components</h4> 
+		<p class="small"></p>Stateless Components </p>
+      <p class="fragment">Don’t need state or lifecycle methods</p>
+      <p class="fragment">Any update in the props will trigger a rerender</p>
+	  <P class="small">A stateless component has no state(obvious, isn’t it?), it means that you can’t reach `this.state` inside it. It also has no lifecycle so you can’t use componentDidMount and other hooks.</P>
+    </section>
+    <section data-background="#3f3f3f">
+      <h4>Components</h4> 
+		<p class="small"></p>Stateless Components </p>
+      <pre>
+    <code data-trim  style="font-size: 50%; line-height: normal">
+const MyComponent = () => (
+    <Text>Hello World</Text>
+    )
+    
+&lt;MyComponent /&gt;
+	// JSX
+	</code></pre>
+    </section>
+    <section data-background="#3f3f3f">
+      <h4>Components Class / Stateful Components </h4>
+      <pre>
+    <code data-trim  style="font-size: 50%; line-height: normal">
+class MyComponent extends React.Component 
+{ 
+	render() { 
+		return (
+    	<Text>Hello World</Text>
+    ) } 
+}
+</pre>
+      </code> </section>
+    <section >
+      <h4>Components</h4> 
+		<p class="small"></p>3 types of component lifecycles</p>
+	<p>Creation / Mounting <br>
+Updating <br>
+Unmounting</p>
+    </section>
+    <section >
+      <h4>Components Creation / Mounting constructor</h4>
+<p>
+static getDerivedStateFromProps(nextProps, prevState) <br>
+render <br>
+componentDidMount<br>
+		</p>
+	</section>
+    <section >
+    <h4>Components Updating</h4>
+     
+		<p>static getDerivedStateFromProps(nextProps, prevState) </p>
+   <p> shouldComponentUpdate(nextProps, nextState) </p>
+   <p> render </p>
+   <p> getSnapshotBeforeUpdate(prevProps, prevState) </p>
+   <p> componentDidUpdate</p>
+
+    </section>
+	  
+    <section >
+      <h4>Components</h4>
+		<p class="small">Unmounting </p>
+		<p>componentWillUnmount </p></section>
+    <section data-background="#3f3f3f">
+      <h4>Components Lifecycle </h4>
+      <pre>
+    <code data-trim  style="font-size: 50%; line-height: normal"> 
+class MyComponent extends React.Component 
+{ 
+  constructor() 
+  	{ // 1 
+    super() this.name = 'My Cool Component’ 
+	}
+     
+	static getDerivedStateFromProps(nextProps, prevState) {} // 2 
+	
+	componentDidMount() {} // 4 
+		
+	render() { // 3 
+		return (
+    		<Text>Hello World</Text>
+    		) } 
+}
+</code></pre>
+    </section>
+	
+	<section data-menu-title="jquery mobile 3" data-background="assets/2020/week5/react2.png" data-background-size="contain" data-background-color="#fff">
+</section>
+	<section data-background="#3f3f3f">
+		<h4>Props vs State in React</h4>
+		<p>In a React component, props are variables passed to it by its parent component. State on the other hand is still variables, but directly initialized and managed by the component.
+
+The state can be initialized by props.</p>
+		 <pre>
+    <code data-trim  style="font-size: 50%; line-height: normal">
+&lt;ChildComponent color=green /&gt;
+
+class ChildComponent extends React.Component {
+  constructor(props) {
+    super(props)
+    console.log(props.color)
+  }
+}
+	
+	</code></pre>
+	</section>
+	
+	
+    <section data-background="#3f3f3f">
+      <h4>Data State </h4>
+      <pre>
+    <code data-trim  style="font-size: 50%; line-height: normal">
+class MyComponent extends React.Component 
+{ 
+ state = { name: 'Wayne’ } changeName = () => { this.setState({ name: 'Khaled' }) } 
+  render() { 
+	return (
+	  <Text>Hello {this.state.name}</Text>
+	) }
+}
+	
+	</code></pre>
+    </section>
+    <section data-background="#3f3f3f">
+      <h4> Data Props </h4>
+      <pre>
+    <code data-trim  style="font-size: 50%; line-height: normal">
+class MyComponent extends React.Component 
+{ 
+  render() { 
+	  return (
+    	 <Text>Hello {this.props.name}</Text>
+    	) } 
+}
+
+	&lt;MyComponent name=&quot;Wayne&quot; /&gt;
+	</code></pre>
+    </section>
+		<section data-menu-title="jquery mobile 3" data-background="assets/2020/week5/d.jpg" data-background-size="contain" data-background-color="#fff">
+</section>
+	
+	 <section data-background="#3f3f3f">
+      <h4>Home Page </h4>
+      <pre>
+    <code data-trim  style="font-size: 30%; line-height: normal">
+
+import React from 'react';
+import { ScrollView, View, TouchableOpacity } from 'react-native';
+import styled from 'styled-components';
+import { Ionicons } from '@expo/vector-icons';
+
+import Categories from '../components/Categories';
+import Card from '../components/Card';
+import { picList } from '../components/data';
+import colours from '../components/Colours';
+
+
+const items = [
+	{ text: 'Avengers |' },
+	{ text: 'Thor |' },
+	{ text: 'Ironman |' },
+	{ text: 'Captain America |' },
+	{ text: 'Guardians |' },
+	{ text: 'Black Widow ' },
+  { text: 'Hawkeye ' }
+];
+
+
+
+class HomeScreen extends React.Component {
+	render() {
+
+			const { navigate } = this.props.navigation;
+		return (
+
+  <Container>
+      <ScrollView>
+          <Titlebar>
+              <Avatar source={require('../assets/avatar.png')} />
+              <Title>Welcome back,</Title>
+              <Name>DR Khaled</Name>
+              <Ionicons
+                  name="md-cart"
+                  size={32}
+                  color={colours.red}
+                  style={{ position: 'absolute', right: 20, top: 5 }}
+              />
+          </Titlebar>
+          <ScrollView
+              horizontal={true}
+              style={{
+                  padding: 20,
+                  paddingLeft: 12,
+                  paddingTop: 30,
+                  flexDirection: 'row'
+              }}
+          >
+              {items.map((category, index) => (
+
+                  <Categories name={category.text} key={index} />
+              ))}
+          </ScrollView>
+          <Subtitle>Your Heroes</Subtitle>
+          <ItemsLayout>
+                  {picList.map((pic, index) => (
+
+                      <TouchableOpacity key={index} onPress={() => navigate('Character')}>
+
+                  <Card cardtitle={pic.title} cardstrength={pic.strength} cardsrc={pic.file} />
+                  </TouchableOpacity>
+                  ))}
+
+          </ItemsLayout>
+          <Footer>
+
+                       <FooterText>Footer</FooterText>
+          </Footer>
+      </ScrollView>
+
+  </Container>
+		);
+	}
+}
+
+export default HomeScreen;
+
+const Container = styled.View`
+	flex: 1;
+	  background: ${colours.background}
+`;
+
+const Titlebar = styled.View`
+	width: 100%;
+	margin-top: 50px;
+	padding-left: 80px;
+`;
+
+const Avatar = styled.Image`
+	width: 44px;
+	height: 44px;
+	background: black;
+	border-radius: 22px;
+	margin-left: 20px;
+	position: absolute;
+	top: 0;
+	left: 0;
+`;
+
+const Title = styled.Text`
+	font-size: 20px;
+	font-weight: 500;
+	color: ${colours.white};
+`;
+
+const Name = styled.Text`
+	font-size: 20px;
+	color: ${colours.red};
+	font-weight: normal;
+`;
+
+const Subtitle = styled.Text`
+	font-size: 20px;
+	color: ${colours.blue};
+	font-weight: 500;
+	margin-top: 10px;
+	margin-left: 25px;
+	text-transform: uppercase;
+`;
+
+const ItemsLayout = styled.View`
+	flex-direction: row;
+	flex: 1;
+	flex-wrap: wrap;
+	align-items:center;
+	justify-content:space-evenly;
+	width:90%;
+	margin:0;
+`;
+
+
+const Footer = styled.View`
+  height: 100px;
+  width: 100%;
+  background-color: ${colours.blue};
+  border-top-right-radius: 30px;
+  border-top-left-radius: 30px;
+  margin-top: 6%;
+	padding:10px
+	text-align:center;
+`;
+
+const FooterText = styled.Text`
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  margin-top: 3%;
+  margin-left: 8%;
+`;
+
+	</code></pre>
+    </section>
+    <section data-menu-title="workshop1" data-background="">
+      <h4>The rest will be covered in the workshop</h4>
+    </section>
+    <section data-menu-title="workshop2" data-background="">
+      <h4>Thursdays Session</h4>
+      <p class="">Build this!</p>
+    </section>
+    <section data-menu-title="finish" data-background="">
+      <h2>BOOM!</h2>
+    </section>
+  </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> 
+<script src="lib/js/head.min.js"></script> 
+<script src="js/reveal.js"></script> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> 
+<script src="https://code.highcharts.com/highcharts.js"></script> 
+<script src="https://code.highcharts.com/highcharts-more.js"></script> 
+<script src="https://code.highcharts.com/modules/solid-gauge.js"></script> 
+<script src="js/themes/mypbtheme.js"></script> 
+<script src="js/jquery.animateNumber.min.js"></script> 
+<script src="js/main.js"></script> 
+<script>
+	var link = document.createElement( 'link' );
+	link.rel = 'stylesheet';
+	link.type = 'text/css';
+	link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+	document.getElementsByTagName( 'head' )[0].appendChild( link );
+</script>
+</body>
+</html>
