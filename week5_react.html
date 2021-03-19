@@ -98,7 +98,7 @@
       <p>there was an error in the categories component - Why?</p>
             
          <pre>
-        <code data-trim  style="font-size: 80%; line-height: normal"> 
+        <code data-trim  style="font-size: 50%; line-height: normal"> 
                
 import React from 'react';
 import styled from 'styled-components';
@@ -121,7 +121,7 @@ const Name = styled.Text`
       <h4>A hidden mistake!!</h4>
       <p>there was an error in the categories component - Why?</p>
             <pre>
-            <code data-trim  style="font-size: 80%; line-height: normal"> 
+            <code data-trim  style="font-size: 50%; line-height: normal"> 
 import React from 'react';
 import styled from 'styled-components';
 import Colours from './Components/Colours';               
@@ -178,7 +178,7 @@ const Name = styled.Text`
     <section>
       <h4>ES6 Modules - Single Default Exports</h4>
       <pre>
-    <code data-trim  style="font-size: 80%; line-height: normal"> 
+    <code data-trim  style="font-size: 50%; line-height: normal"> 
     
 export default function() {
 console.log('Foo!');
@@ -192,7 +192,7 @@ foo(); // Foo!
     <section>
       <h> var vs let vs const</h>
       <pre>
- <code data-trim  style="font-size: 80%; line-height: normal">
+ <code data-trim  style="font-size: 50%; line-height: normal">
 //var is function scoped. - it gets hoisted up by JS.
 
 if ( true ) {
@@ -213,7 +213,7 @@ console.log( bar ); // ReferenceError.
     <section>
       <p>const variables can only be assigned once. It is <strong>NOT</strong> immutable (unchanging over time or unable to be changed).</p>
       <pre>
-    <code data-trim  style="font-size: 80%; line-height: normal">         
+    <code data-trim  style="font-size: 50%; line-height: normal">         
 const foo = { bar: 1 };
 foo = 'bar';
 // “foo” is read only.                     
@@ -245,7 +245,7 @@ console.log(foo);
       <h4>Arrow Functions</h4>
       <p>More concise than traditional function expressions (but you can use either)</p>
       <pre>
-    <code data-trim  style="font-size: 80%; line-height: normal">
+    <code data-trim  style="font-size: 50%; line-height: normal">
 // Traditional function expression.
 const addNumbers = function (num1, num2) {
 return num1 + num2;
@@ -261,7 +261,7 @@ return num1 + num2;
     <section>
          <h4>Arrow Functions</h4>
       <pre>
-    <code data-trim  style="font-size: 80%; line-height: normal">    
+    <code data-trim  style="font-size: 50%; line-height: normal">    
 // Arrow function without any arguments.
 const sayHello = () => console.log( 'Hello!' );
             
@@ -277,7 +277,7 @@ const sayHello = (fName, lName) => console.log( `Hello ${fName} ${lName}!` );
     <section>
       <p>The Template Literal, introduced in ES6, is a new way to create a string.</p>
       <pre>
-    <code data-trim  style="font-size: 80%; line-height: normal">
+    <code data-trim  style="font-size: 50%; line-height: normal">
 let name = 'Wayne';
 
 // The old way... (you may be more familiar with concatenation)
@@ -292,7 +292,7 @@ console.log(`Hello, ${name}!`); // Hello, Wayne!
     <section>
       <p>Within template literals you can evaluate expressions.</p>
       <pre>
-    <code data-trim  style="font-size: 80%; line-height: normal"> 
+    <code data-trim  style="font-size: 50%; line-height: normal"> 
 const price = 19.99;
 const tax = 0.07;
 const total = `The total price is ${price + (price * tax)}`;
@@ -304,7 +304,7 @@ console.log(total);
     </section>
     <section> With template literals you can more easily create multi-line strings.
       <pre>
-    <code data-trim  style="font-size: 80%; line-height: normal">
+    <code data-trim  style="font-size: 50%; line-height: normal">
 console.log('This is some text that flows across\two lines!');
 // "This is some text that flows across
 // two lines!"
@@ -325,7 +325,7 @@ this text!`);
       <h4>Destructuring Objects</h4>
       <p>Let’s create some variables from the object properties.</p>
       <pre>
-    <code data-trim  style="font-size: 80%; line-height: normal">          
+    <code data-trim  style="font-size: 50%; line-height: normal">          
             const person = {
 first: 'Wayne',
 last: 'Christian',
@@ -342,7 +342,7 @@ const last = person.last;
     <section>
       <p>Destructured</p>
       <pre>
-    <code data-trim  style="font-size: 80%; line-height: normal">           
+    <code data-trim  style="font-size: 50%; line-height: normal">           
         const person = {
 first: 'Wayne',
 last: 'Christian',
@@ -358,7 +358,7 @@ const { first, last } = person;
     <section>
       <p>It even works with nested properties.</p>
       <pre>
-    <code data-trim  style="font-size: 80%; line-height: normal">           
+    <code data-trim  style="font-size: 50%; line-height: normal">           
         const person = {
 first: 'Wayne',
 last: 'Christian',
@@ -387,7 +387,7 @@ const { city, state } = person.location;
     </section>
     <section>
     <pre>
-    <code data-trim  style="font-size: 80%; line-height: normal"> //fetch is promise constructor
+    <code data-trim  style="font-size: 50%; line-height: normal"> //fetch is promise constructor
     const postsPromise = fetch('https://2018.miami.wordcamp.org/wp-json/wp/v2/posts');
     
     postsPromise.then(data => console.log(data));
@@ -399,7 +399,7 @@ const { city, state } = person.location;
     </section>
     <section>
       <pre>
-    <code data-trim  style="font-size: 80%; line-height: normal">
+    <code data-trim  style="font-size: 50%; line-height: normal">
 const postsPromise = fetch('https://2018.miami.wordcamp.org/wp-json/wp/v2/posts');
 postsPromise
 .then(data => data.json())
@@ -421,7 +421,7 @@ postsPromise
       <p class="small fragment">Spread</p>
       <p class="small fragment">Allows an iterable such as an array expression or string to be expanded in places</p>
       <pre>
-    <code data-trim  style="font-size: 80%; line-height: normal">
+    <code data-trim  style="font-size: 50%; line-height: normal">
 function sum(x, y, z) {
   return x + y + z;
 }
@@ -441,7 +441,7 @@ console.log(sum(...numbers));
       <p class="fragment">Released March 2015</p>
       <p class="fragment">Rapidly gaining in popularity & adoption</p>
       <p class="fragment">Learn once write anywhere</p>
-      <p class="fragment">Real world projects typically see 80% – 95% code reuse</p>
+      <p class="fragment">Real world projects typically see 50% – 95% code reuse</p>
     </section>
     <section >
       <h4>Who’s using React Native </h4>
@@ -537,7 +537,7 @@ console.log(sum(...numbers));
       <h4>React Native API </h4>
       <p class="small">Primitives are not in global scope, must be imported</p>
       <pre>
-    <code data-trim  style="font-size: 80%; line-height: normal">
+    <code data-trim  style="font-size: 50%; line-height: normal">
 
 // check if any node modules need installing for Cli
 import { View, TouchableOpacity, StyleSheet,SafeAreaView, Button} from 'react-native';
@@ -590,7 +590,7 @@ import { View, TouchableOpacity, StyleSheet,SafeAreaView, Button} from 'react-na
       <h4>React Native vs Web </h4>
       <p class="small">JS Objects or inline styles Styling </p>
       <pre>
-    <code data-trim  style="font-size: 80%; line-height: normal">
+    <code data-trim  style="font-size: 50%; line-height: normal">
 const styles =
 {
 	container: {
@@ -606,7 +606,7 @@ const styles =
       <h4>React Native vs Web Styling </h4>
       <p class="small">Stylesheet </p>
       <pre>
-    <code data-trim  style="font-size: 80%; line-height: normal">
+    <code data-trim  style="font-size: 50%; line-height: normal">
 import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create(
@@ -654,7 +654,7 @@ const styles = StyleSheet.create(
       <p>It is not html in JS</p>
       <p class="fragment">it is JS in JS</p>
       <pre>
-<code data-trim  style="font-size: 80%; line-height: normal">
+<code data-trim  style="font-size: 50%; line-height: normal">
 const myFunction = ({name:wayne}) => {
 return (
     <View>
@@ -700,7 +700,7 @@ return (
     <section>
       <div class="half">
         <pre>
-    <code data-trim  style="font-size: 80%; line-height: normal">
+    <code data-trim  style="font-size: 50%; line-height: normal">
 import React, { Component } from "react";
 
 class ClassComponent extends Component {
@@ -712,7 +712,7 @@ class ClassComponent extends Component {
       </div>
       <div class="half">
         <pre>
-    <code data-trim  style="font-size: 80%; line-height: normal">
+    <code data-trim  style="font-size: 50%; line-height: normal">
 import React from "react";
  
 const FunctionalComponent = () => {
@@ -725,7 +725,7 @@ const FunctionalComponent = () => {
     <section>
       <div class="half">
         <pre>
-    <code data-trim  style="font-size: 80%; line-height: normal">
+    <code data-trim  style="font-size: 50%; line-height: normal">
 import React, { Component } from "react";
 
 export default class Button extends Component {
@@ -750,7 +750,7 @@ export default class Button extends Component {
       </div>
       <div class="half">
         <pre>
-    <code data-trim  style="font-size: 80%; line-height: normal">
+    <code data-trim  style="font-size: 50%; line-height: normal">
 import React, { useState } from "react";
 
 export default function Button() {
@@ -779,7 +779,7 @@ export default function Button() {
     <section data-background="#3f3f3f">
       <h4>Data State </h4>
       <pre>
-    <code data-trim  style="font-size: 80%; line-height: normal">
+    <code data-trim  style="font-size: 50%; line-height: normal">
 class MyComponent extends React.Component
 {
  state = { name: 'Wayne’ } changeName = () => { this.setState({ name: 'Khaled' }) }
